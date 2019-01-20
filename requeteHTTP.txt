@@ -1,0 +1,13 @@
+Host: www.relaischateaux.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0
+Accept: */*
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://www.relaischateaux.com/us/destinations/europe/france
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Content-Length: 78
+Connection: keep-alive
+Cookie: PHPSESSID=4008e3405d1e49a6615468bfa2f27fa5; favoriteLanguage=en_US; device_view=full; rc_first_time_on_site=1; rc_cnil=%7B%22googleAnalytics%22%3Atrue%2C%22rtbMakazi%22%3Atrue%2C%22twitterAds%22%3Atrue%2C%22adwords%22%3Atrue%2C%22cloudfront%22%3Atrue%2C%22yahoo%22%3Atrue%2C%22makazi%22%3Atrue%2C%22doubleClick%22%3Atrue%2C%22twitter%22%3Atrue%2C%22facebook%22%3Atrue%2C%22linkedin%22%3Atrue%2C%22pinterest%22%3Atrue%2C%22gplus%22%3Atrue%2C%22piksel%22%3Atrue%2C%22googleMaps%22%3Atrue%2C%22bookatable%22%3Atrue%2C%22abTasty%22%3Atrue%7D
+Cache-Control: max-age=0, no-cache
+Pragma: no-cache
