@@ -1,38 +1,49 @@
-
-var adress = 'https://www.relaischateaux.com/fr/destinations/europe/france';
 var request = require('request');
 var fs = require('fs');
 
-request(adress, function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
+var linkList = [];
 
-  var rowsList = [];
-  rowsList = String(body).split('\n');
-  
-  var startJSONFound = false;
-  var endJSONFound = false;
-  var i = 0;
-  var JSONcontent = "{\n";
+function getDestinationPage()
+{
+    var siteLink = 'https://www.relaischateaux.com/fr/site-map/etablissements';
+    request(siteLink,function (error,response,body){
+        // get HTML page
+        fs.writeFileSync('./destinationList.html',body);
+        getHotelList();
+    }
+    );
+}
 
-  while (i < rowsList.length && endJSONFound === false)
-  {
-    if (startJSONFound === true && endJSONFound === false)
+function checkIsBuilding(link)
+{
+    return link.includes('https://www.relaischateaux.com/fr/france/')
+}
+
+function getHotelList()
+{
+    var doc = fs.readFileSync('./destinationList.html').toString();
+    var docFrance = doc.split('<h3>France</h3>');
+    var docDiv = docFrance[1].split('</div>');
+    var tempDoc = docDiv[0].split('</a>');
+    fs.writeFileSync('./destinationList.html',tempDoc);
+
+    doc = fs.readFileSync('./destinationList.html').toString()
+
+    var rowsList = doc.split('\n');
+    var finalLinks = [];
+
+    for (var i = 0;i < rowsList.length;i++)
     {
-      if (rowsList[i].includes('</script>'))
-      {
-        endJSONFound = true;
-      }
-      else
-      {
-        JSONcontent = JSONcontent + rowsList[i] + '\n';
-      }
+        if (rowsList[i].includes('<a href'))
+        {
+            finalLinks.push(rowsList[i].split('"')[1]);
+        }
     }
-    if (rowsList[i].includes('markers') && startJSONFound === false)
-    {
-      startJSONFound = true;
-    }
-    i = i + 1;
-  }
-  JSONcontent = JSONcontent.replace(/'/g,'"');
-  fs.writeFileSync('./ResponseJSON.json',JSONcontent);
-});
+    finalLinks = finalLinks.filter(checkIsBuilding);
+    var t = finalLinks.toString();
+    t = t.replace(/,/g,'\n');
+    //console.log(t);
+    fs.writeFileSync('./destinationLinks.txt',t);
+}
+
+getDestinationPage();
