@@ -46,4 +46,28 @@ function getHotelList()
     fs.writeFileSync('./destinationLinks.txt',t);
 }
 
+function getHotelAndRestaurantListOnly(file)
+{
+    var linkList = String(fs.readFileSync(file)).split('\n');
+    fs.writeFileSync('./hotelAndRestaurantOnly.txt','');
+    var stream = fs.createWriteStream("./hotelAndRestaurantOnly.txt", {flags:'a'});
+    for (var i = 0;i < linkList.length;i++)
+    {
+        checkIsRestaurantAndHotel(linkList[i],stream,i);
+    }
+    return;
+}
+
+function checkIsRestaurantAndHotel(link,stream,i)
+{
+    request(link,function(error,response,body){
+        var docContent = String(body);
+        if (docContent.includes('<span>Hôtel</span>'))
+        {
+            stream.write(link + '\n');
+        }
+    })
+}
+
 getDestinationPage();
+getHotelAndRestaurantListOnly('./destinationLinks.txt');

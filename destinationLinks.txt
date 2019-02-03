@@ -7,7 +7,6 @@ https://www.relaischateaux.com/fr/france/aubergedelile-rhone-lyon
 https://www.relaischateaux.com/fr/france/auberge-des-glazicks-plomodiern
 https://www.relaischateaux.com/fr/france/templiers-loiret-boismorand
 https://www.relaischateaux.com/fr/france/jeudepaume-oise-chantilly
-https://www.relaischateaux.com/fr/france/basrupts-vosges-gerardmer
 https://www.relaischateaux.com/fr/france/baumaniere-hotel-spa-les-baux-de-provence
 https://www.relaischateaux.com/fr/france/brittany-finistere-roscoff
 https://www.relaischateaux.com/fr/france/antibes-alpes-maritimes-cap-d-antibes
@@ -109,6 +108,7 @@ https://www.relaischateaux.com/fr/france/stpaul-alpes-maritimes-saint-paul-de-ve
 https://www.relaischateaux.com/fr/france/bras-aveyron-laguiole
 https://www.relaischateaux.com/fr/france/taillevent-paris
 https://www.relaischateaux.com/fr/france/vieuxlogis-dordogne-tremolat
+https://www.relaischateaux.com/fr/france/basrupts-vosges-gerardmer
 https://www.relaischateaux.com/fr/france/palombaggia-corse-du-sud-porto-vecchio
 https://www.relaischateaux.com/fr/france/hautesroches-indre-et-loire-rochecorbon
 https://www.relaischateaux.com/fr/france/hauts-loire-loir-et-cher-onzain
