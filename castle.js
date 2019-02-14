@@ -4,7 +4,7 @@ var fs = require('fs');
 var linkList = [];
 
 function getDestinationPage()
-{
+{// Get the HTML page containing all destination from relaischateaux and store them in destinationList.html
     var siteLink = 'https://www.relaischateaux.com/fr/site-map/etablissements';
     request(siteLink,function (error,response,body){
         // get HTML page
@@ -20,7 +20,7 @@ function checkIsBuilding(link)
 }
 
 function getHotelList()
-{
+{ // transforms the destinationList.html so it contains only the destinations in France
     var doc = fs.readFileSync('./destinationList.html').toString();
     var docFrance = doc.split('<h3>France</h3>');
     var docDiv = docFrance[1].split('</div>');
@@ -47,7 +47,7 @@ function getHotelList()
 }
 
 function getHotelAndRestaurantListOnly(file)
-{
+{ // Get only the hotel+restaurant links and store them in hotelAndRestaurantOnly.txt
     var linkList = String(fs.readFileSync(file)).split('\n');
     fs.writeFileSync('./hotelAndRestaurantOnly.txt','');
     var stream = fs.createWriteStream("./hotelAndRestaurantOnly.txt", {flags:'a'});
