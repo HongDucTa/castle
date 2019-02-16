@@ -7,12 +7,12 @@ var test =[
     {
         "name": "Berger",
         "price": 2462,
-        "link": "http://google.fr"
+        "link": "http://qwant.fr"
     },
     {
         "name": "Castor",
         "price": 15315,
-        "link": "http://google.fr"
+        "link": "http://yammer.fr"
     },
     {
         "name": "Delta",
