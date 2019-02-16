@@ -1,0 +1,32 @@
+.Card
+{
+  width: 33%;
+  border: 2px solid gold;
+  padding: 5px;
+  text-align: center;
+  background-color: black;
+  color: gold;
+  display: inline-block;
+}
+
+h3
+{
+  height: 20%;
+}
+
+.card-img-top
+{
+    border: 2px solid gold;
+    padding: 5px;
+    width: auto;
+    height: 30%;
+    background-color: gold;
+}
+
+.btn
+{
+  margin-top: 10px;
+  width: 90%;
+  background-color: gold;
+  color: black;
+}
