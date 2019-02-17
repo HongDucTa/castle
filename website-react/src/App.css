@@ -2,6 +2,7 @@
 {
     display: block;
     overflow: auto;
+    width: 100%;
 }
 
 #number-results

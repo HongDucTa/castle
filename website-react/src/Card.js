@@ -6,7 +6,7 @@ class Card extends Component
     render()
     {
         return(
-        <div className="Card" style={{display: 'inline-block;'}}>
+        <div className="Card">
             <div className="image-container">
                 <img class="card-img-top img-fluid" src={this.props.data.imageHeaderLink}></img>
             </div>

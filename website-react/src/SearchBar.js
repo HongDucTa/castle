@@ -22,34 +22,66 @@ class SearchBar extends Component
         this.handleChangePlace = this.handleChangePlace.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        ReactDOM.render(<App name={this.state.name} place={this.state.place} sortBy={this.state.sortBy} hotels={this.getHotels()}/>, document.getElementById('main'));
+        ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));
     }
 
     getHotels()
     {
-      switch (this.state.sortBy)
-      {
-        case 'price':
-          hotelList.sort(function(a,b){return a.price-b.price;})
-          break;
-        case 'name':
-          hotelList.sort(function(a,b){
-            var x = a.name.toLowerCase();
-            var y = b.name.toLowerCase();
-            return x < y ? -1 : x > y ? 1 : 0;
-          })
-          break;
-        case 'place':
-          hotelList.sort(function(a,b){
-            var x = a.place.toLowerCase();
-            var y = b.place.toLowerCase();
-            return x < y ? -1 : x > y ? 1 : 0;
-          })
-          break;
-        default:
-          break;
-      }
-      return hotelList;
+        var cleanHotelsName = [];
+        if (this.state.name != 'default' && this.state.name != '')
+        {
+            for (var i=0;i < hotelList.length;i++)
+            {
+                if (hotelList[i].name.toUpperCase().includes(this.state.name.toUpperCase()))
+                {
+                    cleanHotelsName.push(hotelList[i]);
+                }
+            }
+        }
+        else
+        {
+            cleanHotelsName = hotelList;
+        }
+        var cleanHotelsPlace = [];
+        if (this.state.place != 'default' && this.state.place != '')
+        {
+            for (var i=0;i < cleanHotelsName.length;i++)
+            {
+                if (cleanHotelsName[i].place.toUpperCase().includes(this.state.place.toUpperCase()))
+                {
+                    cleanHotelsPlace.push(cleanHotelsName[i]);
+                }
+            }
+        }
+        else
+        {
+            cleanHotelsPlace = cleanHotelsName;
+        }
+
+        switch (this.state.sortBy)
+        {
+            case 'price':
+            cleanHotelsPlace.sort(function(a,b){return a.price-b.price;})
+            break;
+            case 'name':
+            cleanHotelsPlace.sort(function(a,b){
+                var x = a.name.toLowerCase();
+                var y = b.name.toLowerCase();
+                return x < y ? -1 : x > y ? 1 : 0;
+            })
+            break;
+            case 'place':
+            cleanHotelsPlace.sort(function(a,b){
+                var x = a.place.toLowerCase();
+                var y = b.place.toLowerCase();
+                return x < y ? -1 : x > y ? 1 : 0;
+            })
+            break;
+            default:
+            break;
+        }
+
+      return cleanHotelsPlace;
     }
 
     handleChangeSort(event)
@@ -69,7 +101,7 @@ class SearchBar extends Component
 
     handleSubmit(event)
     {
-        ReactDOM.render(<App name={this.state.name} place={this.state.place} sortBy={this.state.sortBy} hotels={this.getHotels()}/>, document.getElementById('main'));
+        ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));
         event.preventDefault();
     }
 

@@ -1,6 +1,7 @@
 .Card
 {
-  width: 33%;
+  max-width: 33%;
+  /*width: 33%;*/
   border: 2px solid gold;
   padding: 5px;
   text-align: center;
