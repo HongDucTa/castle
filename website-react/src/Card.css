@@ -9,9 +9,19 @@
   display: inline-block;
 }
 
-h3
+.card-body
 {
-  height: 20%;
+  height: 400px;
+}
+
+.card-title
+{
+  height: 50px;
+}
+
+.image-container
+{
+  height: 200px;
 }
 
 .card-img-top
@@ -19,7 +29,8 @@ h3
     border: 2px solid gold;
     padding: 5px;
     width: auto;
-    height: 30%;
+    height: 100%;
+    width: 100%;
     background-color: gold;
 }
 

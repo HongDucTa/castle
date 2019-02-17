@@ -17,7 +17,9 @@ class App extends Component {
   render() {
     return (
       <div className="cardHolder">
+        <table>
           {this.state.hotel.map((hotel, i) => <Card key = {i} data = {hotel} />)}
+        </table>
       </div>
     );
   }

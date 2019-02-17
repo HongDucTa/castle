@@ -1,4 +1,5 @@
 .cardHolder
 {
     display: block;
+    overflow: auto;
 }
