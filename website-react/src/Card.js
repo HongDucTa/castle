@@ -8,7 +8,7 @@ class Card extends Component
         return(
         <div className="Card">
             <div className="image-container">
-                <img class="card-img-top img-fluid" src={this.props.data.imageHeaderLink}></img>
+                <img class="card-img-top img-fluid" alt={this.props.data.name} src={this.props.data.imageHeaderLink}></img>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{this.props.data.name}</h5>

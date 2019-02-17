@@ -104,4 +104,5 @@ function getHotelAndRestaurantListOnly(file)
     return;
 }
 
-module.exports = getHotelsJson;
+getHotelsJson();
+//module.exports = getHotelsJson;

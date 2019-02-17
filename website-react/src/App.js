@@ -3,10 +3,6 @@ import './App.css';
 import Card from './Card';
 
 class App extends Component {
-  constructor(props)
-  {
-    super(props);
-  }
 
   renderHotels()
   {

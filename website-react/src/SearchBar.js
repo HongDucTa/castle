@@ -28,7 +28,7 @@ class SearchBar extends Component
     getHotels()
     {
         var cleanHotelsName = [];
-        if (this.state.name != 'default' && this.state.name != '')
+        if (this.state.name !== 'default' && this.state.name !== '')
         {
             for (var i=0;i < this.props.hotelList.length;i++)
             {
@@ -43,13 +43,13 @@ class SearchBar extends Component
             cleanHotelsName = this.props.hotelList;
         }
         var cleanHotelsPlace = [];
-        if (this.state.place != 'default' && this.state.place != '')
+        if (this.state.place !== 'default' && this.state.place !== '')
         {
-            for (var i=0;i < cleanHotelsName.length;i++)
+            for (var j=0;j < cleanHotelsName.length;j++)
             {
-                if (cleanHotelsName[i].place.toUpperCase().includes(this.state.place.toUpperCase()))
+                if (cleanHotelsName[j].place.toUpperCase().includes(this.state.place.toUpperCase()))
                 {
-                    cleanHotelsPlace.push(cleanHotelsName[i]);
+                    cleanHotelsPlace.push(cleanHotelsName[j]);
                 }
             }
         }
