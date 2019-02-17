@@ -1,0 +1,32 @@
+.search-box
+{
+    background-color: gold;
+    margin-bottom: 10px;
+}
+
+form
+{
+    border: 2px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+input
+{
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: lightskyblue;
+    color: black;
+}
+
+label
+{
+    width: 100%;
+}
+
+#btn-search
+{
+    width: 100%;
+    padding: 5px;
+}
