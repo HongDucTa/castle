@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './SearchBar.css';
 import App from './App.js';
 
-import hotelList from './hotelAndRestaurantOnly.json';
+//import hotelList from './hotelAndRestaurantOnly.json';
 
 class SearchBar extends Component
 {
@@ -30,17 +30,17 @@ class SearchBar extends Component
         var cleanHotelsName = [];
         if (this.state.name != 'default' && this.state.name != '')
         {
-            for (var i=0;i < hotelList.length;i++)
+            for (var i=0;i < this.props.hotelList.length;i++)
             {
-                if (hotelList[i].name.toUpperCase().includes(this.state.name.toUpperCase()))
+                if (this.props.hotelList[i].name.toUpperCase().includes(this.state.name.toUpperCase()))
                 {
-                    cleanHotelsName.push(hotelList[i]);
+                    cleanHotelsName.push(this.props.hotelList[i]);
                 }
             }
         }
         else
         {
-            cleanHotelsName = hotelList;
+            cleanHotelsName = this.props.hotelList;
         }
         var cleanHotelsPlace = [];
         if (this.state.place != 'default' && this.state.place != '')
