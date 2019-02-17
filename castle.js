@@ -67,7 +67,7 @@ function getHotelAndRestaurantListOnly(file)
                        name: fullName[0],
                        place: place,
                        michelinStarredRestaurantLink: michelinLink,
-                       price: $('span.price').text(),
+                       price: Number(($('span.price').text()).replace(',','.')),
                        imageHeaderLink: 'https:' + $('img.hotelHeader-img').attr('data-src')
                    });
                }
@@ -104,4 +104,5 @@ function getHotelAndRestaurantListOnly(file)
     return;
 }
 
-export default getHotelsJson;
+getHotelsJson();
+//export default getHotelsJson;

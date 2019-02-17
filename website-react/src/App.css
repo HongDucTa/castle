@@ -3,3 +3,9 @@
     display: block;
     overflow: auto;
 }
+
+#number-results
+{
+    color: gold;
+    text-align: center;
+}
