@@ -1,6 +1,6 @@
 # Launch codes
 
-### `cd website-react/src`
+### `cd website-react`
 
 Go to project directory
 
