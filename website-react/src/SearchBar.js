@@ -12,9 +12,9 @@ class SearchBar extends Component
         super(props);
         this.state =
         {
-            name: 'default',
-            place: 'default',
-            sortBy: 'default'
+            name: '',
+            place: '',
+            sortBy: ''
         };
 
         this.handleChangeSort = this.handleChangeSort.bind(this);
@@ -28,7 +28,7 @@ class SearchBar extends Component
     getHotels()
     {
         var cleanHotelsName = [];
-        if (this.state.name !== 'default' && this.state.name !== '')
+        if (this.state.name !== '')
         {
             for (var i=0;i < this.props.hotelList.length;i++)
             {
@@ -43,7 +43,7 @@ class SearchBar extends Component
             cleanHotelsName = this.props.hotelList;
         }
         var cleanHotelsPlace = [];
-        if (this.state.place !== 'default' && this.state.place !== '')
+        if (this.state.place !== '')
         {
             for (var j=0;j < cleanHotelsName.length;j++)
             {
