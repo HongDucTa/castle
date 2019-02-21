@@ -86,22 +86,21 @@ class SearchBar extends Component
 
     handleChangeSort(event)
     {
-        this.setState({sortBy: event.target.value});
+        this.setState({sortBy: event.target.value}, () => { ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));});
     }
 
     handleChangePlace(event)
     {
-        this.setState({place: event.target.value});
+        this.setState({place: event.target.value}, () => { ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));});
     }
 
     handleChangeName(event)
     {
-        this.setState({name: event.target.value});
+        this.setState({name: event.target.value}, () => { ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));});
     }
 
     handleSubmit(event)
     {
-        ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));
         event.preventDefault();
     }
 
@@ -121,7 +120,6 @@ class SearchBar extends Component
                         <option value="place">Région</option>
                         <option value="price">Prix</option>
                     </select>
-                    <input type="submit" value="Recherche"/>
                 </form>
             </div>
         )
