@@ -1,0 +1,25 @@
+#Chat-overlay
+{
+    position: fixed;
+    height: 40%;
+    width: 20%;
+    bottom: 0%;
+    right: 0%;
+    border: 5px solid grey;
+    background-color: white;
+    color: red;
+    padding: 10px;
+}
+
+#btn-display
+{
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+#Conversation
+{
+    border: 5px solid grey;
+    overflow: scroll;
+    height: 75%;
+}
