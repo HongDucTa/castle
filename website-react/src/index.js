@@ -21,5 +21,5 @@ promise.then(function()
 */
 ReactDOM.render(<Header />, document.getElementById('header'));
 ReactDOM.render(<SearchBar hotelList={hotelList}/>, document.getElementById('searchBar'));
-ReactDOM.render(<Chatbot />, document.getElementById('chat'));
+//ReactDOM.render(<Chatbot />, document.getElementById('chat'));
 
