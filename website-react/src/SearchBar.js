@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './SearchBar.css';
 import App from './App.js';
+import Chatbot from './Chatbot';
 
 //import hotelList from './hotelAndRestaurantOnly.json';
 
@@ -24,6 +25,14 @@ class SearchBar extends Component
 
         ReactDOM.render(<App hotels={this.getHotels()}/>, document.getElementById('main'));
     }
+
+    componentDidMount() {
+        ReactDOM.render(
+            <Chatbot hotels={this.getHotels()}></Chatbot>,
+            document.getElementById('chatbot')
+        );
+
+}
 
     getHotels()
     {
@@ -121,6 +130,8 @@ class SearchBar extends Component
                         <option value="price">Prix</option>
                     </select>
                 </form>
+                <div id="chatbot">
+                </div>
             </div>
         )
     }
