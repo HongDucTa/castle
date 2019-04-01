@@ -16,7 +16,7 @@ const patternDictionary = [
         intent: 'Tri'
     },
     {
-        pattern: '\\b(quels) (sont) (les) (destinations|hôtels|hotels) (qui) (coutent|coûtent|coute|coûte) (?<PlusMinus>([a-z]\\w+)) (de) (?<Prix>([0-9]\\w+))\\b',
+        pattern: '\\b(quels|quelles) (sont) (les) (destinations|hôtels|hotels) (qui) (coutent|coûtent|coute|coûte) (?<PlusMinus>([a-z]\\w+)) (de) (?<Prix>([0-9]\\w+))\\b',
         intent: 'PlusMoinsPrix'
     },
     {
@@ -24,11 +24,11 @@ const patternDictionary = [
         intent: 'Réinitialisation'
     },
     {
-        pattern: '\\b(quels) (sont) (les) (destinations|hotels|hôtels) (se) (trouvant) (dans) (la) (région|region) (?<Region>([a-z]\\w+))\\b',
+        pattern: '\\b(quels|quelles) (sont) (les) (destinations|hotels|hôtels) (se) (trouvant) (dans) (la) (région|region) (?<Region>([a-z]+)-?[a-z]+?)\\b',
         intent: 'DestinationRegion'
     },
     {
-        pattern: '\\b(quelles) (sont) (les) (destinations|hotels|hôtels) (ou|où) (il) (fait) (<Temperature>([a-z]\\w+))\\b',
+        pattern: '\\b(quelles|quels) (sont) (les) (destinations|hotels|hôtels) (ou|où) (il) (fait) (<Temperature>([a-z]\\w+))\\b',
         intent: 'DestinationTemperature'
     },
 

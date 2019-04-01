@@ -65,14 +65,23 @@ class Chatbot extends Component {
                     response += "Voici les destinations qui coûtent " + cb.entities.PlusMinus + " de " + cb.entities.Prix + " €.";
                     switch (cb.entities.PlusMinus.toLowerCase()) {
                         case "moins":
-                            var temp = this.state.hotels.filter(function (a) {
+                            var temp = this.props.hotels.filter(function (a) {
                                 var x = a.price;
                                 return x <= Number(cb.entities.Prix);
                             })
                             this.state.hotels = temp;
                             console.log(this.state.hotels);
                             break;
-                        default:;
+                        case "plus":
+                            var temp = this.props.hotels.filter(function (a) {
+                                var x = a.price;
+                                return x >= Number(cb.entities.Prix);
+                            })
+                            this.state.hotels = temp;
+                            console.log(this.state.hotels);
+                            break;
+                        default: 
+                            response = "Chatbot > Je suis désolé. Je n'ai pas pu identifié le critère de tri de votre recherche.";
                     }
                     break;
 
@@ -83,7 +92,7 @@ class Chatbot extends Component {
 
                 case "DestinationRegion":
                     response += "Voici les destinations se trouvant dans la région " + cb.entities.Region;
-                    var temp = this.state.hotels.filter(function(a){
+                    var temp = this.props.hotels.filter(function (a) {
                         var x = a.place.toLowerCase();
                         return (x === cb.entities.Region.toLowerCase());
                     })
