@@ -24,7 +24,7 @@ const patternDictionary = [
         intent: 'Réinitialisation'
     },
     {
-        pattern: '\\b(quels|quelles) (sont) (les) (destinations|hotels|hôtels) (se) (trouvant) (dans) (la) (région|region) (?<Region>([a-z]+)-?[a-z]+?)\\b',
+        pattern: '\\b(quels|quelles) (sont) (les) (destinations|hotels|hôtels) (se) (trouvant) (dans) (la) (région|region) (?<Region>([a-zô]+)(-)?([a-zô]+)?(-|\'|’)?([a-zô]+)?)\\b',
         intent: 'DestinationRegion'
     },
     {
